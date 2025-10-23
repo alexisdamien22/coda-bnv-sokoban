@@ -100,6 +100,7 @@ void main()
                 }
             }
         }
+        system("clear");
         grid(pos_j,pos_b,pos_obj);
     }
 }
