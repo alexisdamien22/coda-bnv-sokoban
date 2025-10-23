@@ -4,6 +4,7 @@
 #include "struct.h"
 #include "grid.h"
 #include "win.h"
+#include "linked_tab_functions.c"
 
 void main()
 {
@@ -15,7 +16,6 @@ void main()
     pos init_pos_j;
     pos init_pos_b;
     pos init_pos_obj;
-    printf("?\n");
     init_pos_obj.pos_x = rand() % 7;
     init_pos_obj.pos_y = rand() % 7;
     if (init_pos_obj.pos_x == 0)
@@ -24,8 +24,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6;
-            init_pos_j.pos_y = rand() % 6;
+                init_pos_b.pos_x = rand() % 6;
+                init_pos_b.pos_y = rand() % 6;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -36,8 +36,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6;
-                init_pos_j.pos_y = rand() % 6 + 1;
+                init_pos_b.pos_x = rand() % 6;
+                init_pos_b.pos_y = rand() % 6 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -48,8 +48,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6;
-                init_pos_j.pos_y = rand() % 5 + 1;
+                init_pos_b.pos_x = rand() % 6;
+                init_pos_b.pos_y = rand() % 5 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -63,8 +63,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6 + 1;
-                init_pos_j.pos_y = rand() % 6;
+                init_pos_b.pos_x = rand() % 6 + 1;
+                init_pos_b.pos_y = rand() % 6;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -75,8 +75,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6 + 1;
-                init_pos_j.pos_y = rand() % 6 + 1;
+                init_pos_b.pos_x = rand() % 6 + 1;
+                init_pos_b.pos_y = rand() % 6 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -87,8 +87,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 6 + 1;
-                init_pos_j.pos_y = rand() % 5 + 1;
+                init_pos_b.pos_x = rand() % 6 + 1;
+                init_pos_b.pos_y = rand() % 5 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -102,8 +102,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 5 + 1;
-                init_pos_j.pos_y = rand() % 6;
+                init_pos_b.pos_x = rand() % 5 + 1;
+                init_pos_b.pos_y = rand() % 6;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -114,8 +114,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 5 + 1;
-                init_pos_j.pos_y = rand() % 6 + 1;
+                init_pos_b.pos_x = rand() % 5 + 1;
+                init_pos_b.pos_y = rand() % 6 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -126,8 +126,8 @@ void main()
         {
             while (t == 0)
             {
-                init_pos_j.pos_x = rand() % 5 + 1;
-                init_pos_j.pos_y = rand() % 5 + 1;
+                init_pos_b.pos_x = rand() % 5 + 1;
+                init_pos_b.pos_y = rand() % 5 + 1;
                 if (init_pos_b.pos_x != init_pos_obj.pos_x && init_pos_b.pos_y != init_pos_obj.pos_y )
                 {
                     t = 1;
@@ -135,24 +135,24 @@ void main()
             }
         }
     }
+    t = 0;
     while (t == 0)
     {
         init_pos_j.pos_x = rand() % 7;
         init_pos_j.pos_y = rand() % 7;
-        if (init_pos_b.pos_x != init_pos_j.pos_x && init_pos_b.pos_y != init_pos_j.pos_y && init_pos_obj.pos_x != init_pos_j.pos_x && init_pos_obj.pos_y != init_pos_j.pos_y)
+        if (init_pos_j.pos_x != init_pos_b.pos_x && init_pos_j.pos_y != init_pos_b.pos_y || init_pos_j.pos_x != init_pos_obj.pos_x && init_pos_j.pos_y != init_pos_obj.pos_y)
         {
             t = 1;
         }
     }
-    printf("?!\n");
     pos_obj.pos_x = init_pos_obj.pos_x;
     pos_obj.pos_y = init_pos_obj.pos_y;
     pos_b.pos_x = init_pos_b.pos_x;
     pos_b.pos_y = init_pos_b.pos_y;
     pos_j.pos_x = init_pos_j.pos_x;
     pos_j.pos_y = init_pos_j.pos_y;
-    printf("!\n");
-    //grid(pos_j,pos_b,pos_obj);
+    system("clear");
+    grid(pos_j,pos_b,pos_obj);
     int W = 0;
     while (W == 0)
     {

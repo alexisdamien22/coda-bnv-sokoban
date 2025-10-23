@@ -4,7 +4,8 @@ NAME = sokoban
 
 SRCS = main.c \
 	grid.c \
-	win.c
+	win.c \
+	linked_tab_functions.c
 
 all: $(NAME)
 

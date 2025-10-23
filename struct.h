@@ -7,6 +7,7 @@ struct s_pos
 {
 	int pos_y;
     int pos_x;
+    pos *next;
 };
 
 #endif //TESTS_STRUCT_H
