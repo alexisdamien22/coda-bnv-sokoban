@@ -4,6 +4,7 @@ NAME = sokoban
 
 SRCS = main.c \
 	grid.c \
+	win.c
 
 all: $(NAME)
 

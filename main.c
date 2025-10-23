@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "struct.h"
 #include "grid.h"
+#include "win.h"
 
 void main()
 {
@@ -103,5 +104,14 @@ void main()
         }
         system("clear");
         grid(pos_j,pos_b,pos_obj);
+        W = win( pos_j , pos_b , pos_obj );
+    }
+    if (W == 1)
+    {
+        printf("Gagné !\n");
+    }
+    else if (W == -1)
+    {
+        printf("Perdu !\n");
     }
 }
