@@ -5,9 +5,16 @@
 void grid(pos pos_j,pos pos_b,pos pos_obj)
 {
     char grid_org[8][8] = {{"        "},{"        "},{"        "},{"        "},{"        "},{"        "},{"        "},{"        "}};
+    if ( pos_b.pos_x != pos_obj.pos_x || pos_b.pos_y != pos_obj.pos_y)
+    {
+        grid_org[pos_b.pos_y][pos_b.pos_x] = 'X';
+        grid_org[pos_obj.pos_y][pos_obj.pos_x] = '.';
+    }
+    else 
+    {
+        grid_org[pos_b.pos_y][pos_b.pos_x] = '!';
+    }
     grid_org[pos_j.pos_y][pos_j.pos_x]='O';
-    grid_org[pos_b.pos_y][pos_b.pos_x]='X';
-    grid_org[pos_obj.pos_y][pos_obj.pos_x]='.';
     int i = 0;
     printf("Joueur : %d %d\n",pos_j.pos_x+1,pos_j.pos_y+1);
     printf("Boite : %d %d\n",pos_b.pos_x+1,pos_b.pos_y+1);

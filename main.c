@@ -15,6 +15,7 @@ void main()
     pos_b.pos_y = 1;
     pos_j.pos_x = 3;
     pos_j.pos_y = 4;
+    system("clear");
     grid(pos_j,pos_b,pos_obj);
     int W = 0;
     while (W == 0)
