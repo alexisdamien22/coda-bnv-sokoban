@@ -7,6 +7,7 @@ struct s_pos
 {
 	int pos_y;
     int pos_x;
+    int pos_t;
     pos *next;
 };
 

@@ -8,6 +8,7 @@
 
 void main()
 {
+    srand(time(NULL));
     int t = 0;
     char move;
     pos pos_b;

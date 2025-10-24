@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include "struct.h"
 
-void add_link(number **list, int value, int pos)
+void add_link(pos **list, int pos_x, int pos_y, int pos_t)
 {
-	number *tmp = *list;
+	pos *tmp = *list;
 	while(tmp->next != NULL)
 	{
-		if(tmp->next->value == pos)
+		if(tmp->next->pos_t == pos_t)
 		{
-			number *item = malloc(sizeof(*item));
-        	item->value = value;
+			pos *item = malloc(sizeof(*item));
+        	item->pos_x = pos_x;
+			item->pos_y = pos_y;
         	item->next = tmp->next->next->next;
             tmp->next->next = item;
 		}
@@ -19,63 +20,66 @@ void add_link(number **list, int value, int pos)
 	}
 }
 
-void add_to_end(number **list, int value)
+void add_to_end(pos **list, int pos_x, int pos_y)
 {
-	number *tmp = *list;
+	pos *tmp = *list;
 
 	while(tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	}
 
-	number *item = malloc(sizeof(*item));
-	item->value = value;
+	pos *item = malloc(sizeof(*item));
+	item->pos_x = pos_x;
+	item->pos_y = pos_y;
 	item->next = NULL;
 
 	tmp->next = item;
 }
 
-number *create_list(int value)
+pos *create_list(int pos_x,int pos_y)
 {
-	number *first = malloc(sizeof(*first));
-	first->value = value;
+	pos *first = malloc(sizeof(*first));
+	first->pos_x = pos_x;
+	first->pos_y = pos_y;
 	first->next = NULL;
 
 	return first;
 }
 
-void delete_list(number **list)
+void delete_list(pos **list)
 {
-	number *tmp = *list;
+	pos *tmp = *list;
 
 	while(tmp != NULL)
 	{
-		number *to_remove = tmp;
+		pos *to_remove = tmp;
 		tmp = tmp->next;
 		free(to_remove);
 	}
 }
 
-void display_list(number **list)
+void display_list(pos **list)
 {
-	number *tmp = *list;
+	pos *tmp = *list;
 
 	while(tmp != NULL)
 	{
-		printf("Nb : %d\n", tmp->value);
+		printf("X : %d\n", tmp->pos_x);
+		printf("Y : %d\n", tmp->pos_y);
 		tmp = tmp->next;
 	}
 }
 
-void remove_link(number **list, int value)
+void remove_link(pos **list, int pos_t)
 {
-	number *tmp = *list;
+	pos *tmp = *list;
 
 	while(tmp->next != NULL)
 	{
-		if(tmp->next->value == value)
+		if(tmp->next->pos_t== pos_t)
 		{
-			number *to_remove = tmp->next;
+			pos *to_remove = tmp->next;
 			tmp->next = to_remove->next;
 			free(to_remove);
 		}
