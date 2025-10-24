@@ -4,7 +4,7 @@
 #include "struct.h"
 #include "grid.h"
 #include "win.h"
-#include "linked_tab_functions.c"
+//#include "linked_tab_functions.c"
 
 void main()
 {
@@ -141,7 +141,7 @@ void main()
     {
         init_pos_j.pos_x = rand() % 7;
         init_pos_j.pos_y = rand() % 7;
-        if (init_pos_j.pos_x != init_pos_b.pos_x && init_pos_j.pos_y != init_pos_b.pos_y || init_pos_j.pos_x != init_pos_obj.pos_x && init_pos_j.pos_y != init_pos_obj.pos_y)
+        if (init_pos_j.pos_x != init_pos_b.pos_x && init_pos_j.pos_y != init_pos_b.pos_y && init_pos_j.pos_x != init_pos_obj.pos_x && init_pos_j.pos_y != init_pos_obj.pos_y)
         {
             t = 1;
         }
