@@ -4,7 +4,6 @@
 #include "struct.h"
 #include "grid.h"
 #include "win.h"
-#include "linked_tab_functions.c"
 
 void main()
 {
@@ -157,7 +156,7 @@ void main()
     int W = 0;
     while (W == 0)
     {
-        printf("Choisissez un mouvement : haut(z) bas(s) gauche(q) droite(d) undo(u) reset(r)\n");
+        printf("Choisissez un mouvement : haut(z) bas(s) gauche(q) droite(d) reset(r)\n");
         scanf("%c",&move);
         if (move != 'z' && move != 'q' && move != 's' && move != 'd' && move != 'r')
         {
