@@ -4,7 +4,7 @@
 #include "struct.h"
 #include "grid.h"
 #include "win.h"
-//#include "linked_tab_functions.c"
+#include "linked_tab_functions.c"
 
 void main()
 {
