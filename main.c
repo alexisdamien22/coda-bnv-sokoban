@@ -157,9 +157,9 @@ void main()
     int W = 0;
     while (W == 0)
     {
-        printf("Choisissez un mouvement : haut(z) bas(s) gauche(q) droite(d)\n");
+        printf("Choisissez un mouvement : haut(z) bas(s) gauche(q) droite(d) undo(u) reset(r)\n");
         scanf("%c",&move);
-        if (move != 'z' && move != 'q' && move != 's' && move != 'd' )
+        if (move != 'z' && move != 'q' && move != 's' && move != 'd' && move != 'r')
         {
             printf("Choix invalide...\n");
         }
@@ -236,6 +236,15 @@ void main()
                         pos_j.pos_x++;
                     }
                 }
+            }
+            else if (move == 'r')
+            {
+                pos_obj.pos_x = init_pos_obj.pos_x;
+                pos_obj.pos_y = init_pos_obj.pos_y;
+                pos_b.pos_x = init_pos_b.pos_x;
+                pos_b.pos_y = init_pos_b.pos_y;
+                pos_j.pos_x = init_pos_j.pos_x;
+                pos_j.pos_y = init_pos_j.pos_y;
             }
         }
         system("clear");
